@@ -3,6 +3,7 @@
 #' @name fetchDemographicData
 #' @author Jack Leary
 #' @description This function pulls demographic survey data from the CDC's NHANES survey from a user-provided year.
+#' @import magrittr
 #' @importFrom rvest read_html html_element html_text2
 #' @importFrom stringr str_match
 #' @importFrom haven read_xpt
