@@ -14,7 +14,6 @@
 #' @export
 #' @examples
 #' fetchLabData(start.year = "2017", lab.dataset.list = c("TCHOL_J", "PBCD_J"))
-#' lapply(c("2015", "2017"), fetchLabData)
 
 fetchLabData <- function(start.year = "2017", lab.dataset.list = NULL) {
   # check inputs

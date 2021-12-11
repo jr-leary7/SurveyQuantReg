@@ -19,7 +19,6 @@ This function pulls various types of supplementary dietary data from the CDC's N
 }
 \examples{
 fetchDietaryData(start.year = "2017", diet.dataset.list = c("DR1IFF_J", "DR2IFF_J"))
-lapply(c("2015", "2017"), fetchDietaryData)
 }
 \seealso{
 \code{\link{availableDietaryData}}

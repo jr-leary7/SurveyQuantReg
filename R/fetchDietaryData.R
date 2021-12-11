@@ -14,7 +14,6 @@
 #' @export
 #' @examples
 #' fetchDietaryData(start.year = "2017", diet.dataset.list = c("DR1IFF_J", "DR2IFF_J"))
-#' lapply(c("2015", "2017"), fetchDietaryData)
 
 fetchDietaryData <- function(start.year = "2017", diet.dataset.list = NULL) {
   # check inputs

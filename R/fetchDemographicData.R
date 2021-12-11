@@ -12,7 +12,6 @@
 #' @export
 #' @examples
 #' fetchDemographicData(start.year = "2017")
-#' lapply(c("2015", "2017"), fetchDemographicData)
 
 fetchDemographicData <- function(start.year = "2017") {
   # check inputs

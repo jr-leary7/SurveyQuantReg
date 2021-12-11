@@ -28,8 +28,8 @@ availableExaminationData <- function(start.year = "2017") {
   exam_table <- cdc_scraped %>%
                 rvest::html_element("tbody") %>%
                 rvest::html_table() %>%
-                stats::setNames(c("DIET_TYPE", "DIET_ABRV", "DIET_FILE", "DIET_DATE")) %>%
-                dplyr::mutate(DIET_ABRV = gsub(" Doc", "", DIET_ABRV))
+                stats::setNames(c("EXAM_TYPE", "EXAM_ABRV", "EXAM_FILE", "EXAM_DATE")) %>%
+                dplyr::mutate(EXAM_ABRV = gsub(" Doc", "", EXAM_ABRV))
   if (nrow(exam_table) == 0) {
     stop(sprintf("An error occurred when pulling examination dataset names from %s", cdc_url))
   }

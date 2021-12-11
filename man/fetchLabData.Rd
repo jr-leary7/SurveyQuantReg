@@ -19,7 +19,6 @@ This function pulls various types of laboratory data from the CDC's NHANES surve
 }
 \examples{
 fetchLabData(start.year = "2017", lab.dataset.list = c("TCHOL_J", "PBCD_J"))
-lapply(c("2015", "2017"), fetchLabData)
 }
 \seealso{
 \code{\link{availableLabData}}

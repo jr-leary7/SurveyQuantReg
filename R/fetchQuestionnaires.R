@@ -14,7 +14,6 @@
 #' @export
 #' @examples
 #' fetchQuestionnaires(start.year = "2017")
-#' lapply(c("2015", "2017"), fetchQuestionnaires)
 
 fetchQuestionnaires <- function(start.year = "2017", survey.list = NULL) {
   # check inputs

@@ -17,7 +17,6 @@ This function pulls demographic survey data from the CDC's NHANES survey from a 
 }
 \examples{
 fetchDemographicData(start.year = "2017")
-lapply(c("2015", "2017"), fetchDemographicData)
 }
 \author{
 Jack Leary

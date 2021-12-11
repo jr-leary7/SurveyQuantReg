@@ -19,7 +19,6 @@ This function pulls more granular questionnaire data from the CDC's NHANES surve
 }
 \examples{
 fetchQuestionnaires(start.year = "2017")
-lapply(c("2015", "2017"), fetchQuestionnaires)
 }
 \seealso{
 \code{\link{availableQuestionnaires}}
