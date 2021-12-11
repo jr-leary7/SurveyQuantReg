@@ -7,7 +7,7 @@
 #' @param start.year The year for which the user desires data. Must not be later than 2017 (the last year currently available). Defaults to "2017".
 #' @param survey.list A character vector containing the names of specific questionnaires the user would like to analyze. If none are provided, all questionnaires are returned. Defaults to NULL.
 #' @return A named list containing the requested questionnaire data.
-#' @seealso viewAllQuestionnaires
+#' @seealso \code{\link{availableQuestionnaires}}
 #' @export
 #' @examples
 #' fetchQuestionnaires(start.year = "2017")

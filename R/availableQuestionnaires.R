@@ -8,7 +8,7 @@
 #' @importFrom dplyr mutate
 #' @param start.year The year for which the user desires data. Must not be later than 2017 (the last year currently available). Defaults to "2017".
 #' @return A data.frame containing, namely, the names of the available for the given year and their abbreviated names.
-#' @seealso fetchQuestionnaires
+#' @seealso \code{\link{fetchQuestionnaires}}
 #' @export
 #' @examples
 #' availableQuestionnaires(start.year = "2011")
