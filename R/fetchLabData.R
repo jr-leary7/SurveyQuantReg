@@ -5,6 +5,7 @@
 #' @description This function pulls various types of laboratory data from the CDC's NHANES survey for a user-provided year.
 #' @import magrittr
 #' @importFrom dplyr pull
+#' @importFrom progress progress_bar
 #' @importFrom haven read_xpt
 #' @param start.year The year for which the user desires data. Must not be later than 2017 (the last year currently available). Defaults to "2017".
 #' @param lab.dataset.list A character vector containing the names of specific lab datasets the user would like to analyze. If none are provided, all lab datasets are returned. Defaults to NULL.
@@ -21,7 +22,7 @@ fetchLabData <- function(start.year = "2017", lab.dataset.list = NULL) {
     stop("start.year must be between 1999 and 2017, and must be an odd year.")
   }
   if (is.null(lab.dataset.list)) {
-    lab.dataset.list <- availableLabData(start.year = start.year) %>% pull(LAB_ABRV)
+    lab.dataset.list <- availableLabData(start.year = start.year) %>% dplyr::pull(LAB_ABRV)
   }
   # dynamically generate URLs & fetch data
   end_year <- as.character(as.numeric(start.year) + 1)
@@ -29,8 +30,13 @@ fetchLabData <- function(start.year = "2017", lab.dataset.list = NULL) {
   data_urls <- sapply(lab.dataset.list,
                       function(x) paste0("https://wwwn.cdc.gov/Nchs/Nhanes/", year_range, "/", x, ".XPT"),
                       USE.NAMES = FALSE)
+  # set up progress bar
+  pb <- progress::progress_bar$new(format = "  downloading (:rate) [:bar] :percent eta: :eta",
+                                   total = length(lab.dataset.list),
+                                   clear = FALSE,
+                                   width = 60)
   read_lab_fun <- function(x) {
-    Sys.sleep(1)
+    pb$tick()
     res <- tryCatch(
       haven::read_xpt(x),
       error = function(e) "Error reading lab data"

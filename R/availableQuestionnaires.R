@@ -20,7 +20,7 @@ availableQuestionnaires <- function(start.year = "2017") {
   if (!start.year %in% c("1999", "2001", "2003", "2005", "2007", "2009", "2011", "2013", "2015", "2017")) {
     stop("start.year must be between 1999 and 2017, and must be an odd year.")
   }
-  # get questionnaire names
+  # fetch table of questionnaire names
   cdc_url <- paste0("https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Questionnaire&CycleBeginYear=", start.year)
   cdc_bow <- polite::bow(url = cdc_url, force = TRUE)
   cdc_session <- polite::nod(bow = cdc_bow, path = cdc_url, verbose = FALSE)

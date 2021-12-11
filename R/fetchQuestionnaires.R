@@ -5,6 +5,7 @@
 #' @description This function pulls more granular questionnaire data from the CDC's NHANES survey for a user-provided year.
 #' @import magrittr
 #' @importFrom dplyr pull
+#' @importFrom progress progress_bar
 #' @importFrom haven read_xpt
 #' @param start.year The year for which the user desires data. Must not be later than 2017 (the last year currently available). Defaults to "2017".
 #' @param survey.list A character vector containing the names of specific questionnaires the user would like to analyze. If none are provided, all questionnaires are returned. Defaults to NULL.
@@ -21,7 +22,7 @@ fetchQuestionnaires <- function(start.year = "2017", survey.list = NULL) {
     stop("start.year must be between 1999 and 2017, and must be an odd year.")
   }
   if (is.null(survey.list)) {
-    survey.list <- availableQuestionnaires(start.year = start.year) %>% pull(SURVEY_ABRV)
+    survey.list <- availableQuestionnaires(start.year = start.year) %>% dplyr::pull(SURVEY_ABRV)
   }
   # dynamically generate URLs & fetch data
   end_year <- as.character(as.numeric(start.year) + 1)
@@ -29,8 +30,13 @@ fetchQuestionnaires <- function(start.year = "2017", survey.list = NULL) {
   data_urls <- sapply(survey.list,
                       function(x) paste0("https://wwwn.cdc.gov/Nchs/Nhanes/", year_range, "/", x, ".XPT"),
                       USE.NAMES = FALSE)
+  # set up progress bar
+  pb <- progress::progress_bar$new(format = "  downloading (:rate) [:bar] :percent eta: :eta",
+                                   total = length(survey.list),
+                                   clear = FALSE,
+                                   width = 60)
   read_quest_fun <- function(x) {
-    Sys.sleep(1)
+    pb$tick()
     res <- tryCatch(
       haven::read_xpt(x),
       error = function(e) "Error reading questionnaire data"

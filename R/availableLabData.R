@@ -1,4 +1,4 @@
-#' Fetch a table of the different NHANES laboratory data available for a given year.
+#' Fetch a table of the different NHANES laboratory datasets available for a given year.
 #'
 #' @name availableLabData
 #' @author Jack Leary

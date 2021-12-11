@@ -2,7 +2,7 @@
 % Please edit documentation in R/availableLabData.R
 \name{availableLabData}
 \alias{availableLabData}
-\title{Fetch a table of the different NHANES laboratory data available for a given year.}
+\title{Fetch a table of the different NHANES laboratory datasets available for a given year.}
 \usage{
 availableLabData(start.year = "2017")
 }
