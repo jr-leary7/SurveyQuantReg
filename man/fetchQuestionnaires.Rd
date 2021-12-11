@@ -22,5 +22,5 @@ fetchQuestionnaires(start.year = "2017")
 lapply(c("2015", "2017"), fetchQuestionnaires)
 }
 \seealso{
-viewAllQuestionnaires
+\code{\link{availableQuestionnaires}}
 }

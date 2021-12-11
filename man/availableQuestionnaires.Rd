@@ -19,5 +19,5 @@ This function generates a table of the available NHANES questionnaires and their
 availableQuestionnaires(start.year = "2011")
 }
 \seealso{
-fetchQuestionnaires
+\code{\link{fetchQuestionnaires}}
 }

@@ -3,12 +3,16 @@ Type: Package
 Title: Analyze NHANES Data with Quantile Regression
 Version: 0.1.1
 Author: Jack Leary [aut]
-Maintainer: The package maintainer <j.leary@ufl.edu>
+Maintainer: Jack Leary <j.leary@ufl.edu>
 Description: This package can be used to fetch NHANES data from the CDC's website, and analyze associations between variables using quantile regression. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
 Depends: magrittr
-Imports: rvest, stringr, haven, dplyr
+Imports: rvest, stringr, haven, dplyr, survey
 URL: https://github.com/jr-leary7/SurveyQuantReg
+Suggests: 
+    rmarkdown,
+    knitr
+VignetteBuilder: knitr
