@@ -26,7 +26,7 @@ bootSurveyDesign <- function(survey.dat = NULL,
                              n.boot = 1000) {
   # check inputs
   if (any(unlist(lapply(list(survey.dat, id.var, strata.var, weight.var, nested.clusters, survey.dat), is.null)))) {
-    stop()
+    stop("Arguments to bootSurveyDesign() must be non-null.")
   }
   # survey design
   survey_design <- survey::svydesign(id = ~as.symbol(id.var),

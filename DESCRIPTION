@@ -1,7 +1,7 @@
 Package: SurveyQuantReg
 Type: Package
 Title: Analyze NHANES Data with Quantile Regression
-Version: 0.1.1
+Version: 0.1.2
 Author: Jack Leary [aut]
 Maintainer: Jack Leary <j.leary@ufl.edu>
 Description: This package can be used to fetch NHANES data from the CDC's website, and analyze associations between variables using quantile regression. 
