@@ -1,6 +1,7 @@
 #' Fetch a table of the different NHANES questionnaires available for a given year.
 #'
 #' @name availableQuestionnaires
+#' @author Jack Leary
 #' @description This function generates a table of the available NHANES questionnaires and their abbreviated names e.g., "Cardiovascular Health" and "CDQ_J" for 2017-2018. The desired abbreviated values can then be fed into \code{\link{fetchQuestionnaires}}, which will return the questionnaire data itself.
 #' @import magrittr
 #' @importFrom polite bow nod scrape

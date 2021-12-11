@@ -15,7 +15,7 @@ fetchQuestionnaires(start.year = "2017", survey.list = NULL)
 A named list containing the requested questionnaire data.
 }
 \description{
-This function pulls more granular questionnaire data from the CDC's NHANES survey from a user-provided year.
+This function pulls more granular questionnaire data from the CDC's NHANES survey for a user-provided year.
 }
 \examples{
 fetchQuestionnaires(start.year = "2017")
@@ -23,4 +23,7 @@ lapply(c("2015", "2017"), fetchQuestionnaires)
 }
 \seealso{
 \code{\link{availableQuestionnaires}}
+}
+\author{
+Jack Leary
 }

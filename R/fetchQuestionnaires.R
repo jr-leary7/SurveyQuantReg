@@ -1,8 +1,10 @@
 #' Fetch NHANES questionnaire data for a given year.
 #'
 #' @name fetchQuestionnaires
-#' @description This function pulls more granular questionnaire data from the CDC's NHANES survey from a user-provided year.
+#' @author Jack Leary
+#' @description This function pulls more granular questionnaire data from the CDC's NHANES survey for a user-provided year.
 #' @import magrittr
+#' @importFrom dplyr pull
 #' @importFrom haven read_xpt
 #' @param start.year The year for which the user desires data. Must not be later than 2017 (the last year currently available). Defaults to "2017".
 #' @param survey.list A character vector containing the names of specific questionnaires the user would like to analyze. If none are provided, all questionnaires are returned. Defaults to NULL.
@@ -17,6 +19,9 @@ fetchQuestionnaires <- function(start.year = "2017", survey.list = NULL) {
   # check inputs
   if (!start.year %in% c("1999", "2001", "2003", "2005", "2007", "2009", "2011", "2013", "2015", "2017")) {
     stop("start.year must be between 1999 and 2017, and must be an odd year.")
+  }
+  if (is.null(survey.list)) {
+    survey.list <- availableQuestionnaires(start.year = start.year) %>% pull(SURVEY_ABRV)
   }
   # dynamically generate URLs & fetch data
   end_year <- as.character(as.numeric(start.year) + 1)

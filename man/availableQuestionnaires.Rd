@@ -21,3 +21,6 @@ availableQuestionnaires(start.year = "2011")
 \seealso{
 \code{\link{fetchQuestionnaires}}
 }
+\author{
+Jack Leary
+}
