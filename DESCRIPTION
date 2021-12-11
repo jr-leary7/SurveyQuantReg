@@ -9,8 +9,15 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
-Depends: magrittr
-Imports: rvest, stringr, haven, dplyr, survey
+Depends:
+    magrittr
+Imports:
+    rvest, 
+    stringr, 
+    haven, 
+    dplyr, 
+    survey, 
+    polite
 URL: https://github.com/jr-leary7/SurveyQuantReg
 Suggests: 
     rmarkdown,

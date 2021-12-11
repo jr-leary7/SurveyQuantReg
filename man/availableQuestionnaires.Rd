@@ -10,7 +10,7 @@ availableQuestionnaires(start.year = "2017")
 \item{start.year}{The year for which the user desires data. Must not be later than 2017 (the last year currently available). Defaults to "2017".}
 }
 \value{
-A data.frame containing, namely, the names of the available for the given year and their abbreviated names.
+A data.frame containing the full and abbreviated names of the available questionnaires for the given year.
 }
 \description{
 This function generates a table of the available NHANES questionnaires and their abbreviated names e.g., "Cardiovascular Health" and "CDQ_J" for 2017-2018. The desired abbreviated values can then be fed into \code{\link{fetchQuestionnaires}}, which will return the questionnaire data itself.
