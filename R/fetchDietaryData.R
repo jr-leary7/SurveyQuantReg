@@ -1,4 +1,4 @@
-#' Fetch NHANES dietary data for a given year.
+#' Fetch NHANES dietary data for a given survey cycle.
 #'
 #' @name fetchDietaryData
 #' @author Jack Leary

@@ -1,8 +1,8 @@
-#' Fetch NHANES questionnaire data for a given year.
+#' Fetch NHANES questionnaire data for a given survey cycle.
 #'
 #' @name fetchQuestionnaires
 #' @author Jack Leary
-#' @description This function pulls more granular questionnaire data from the CDC's NHANES survey for a user-provided year.
+#' @description This function pulls questionnaire data from the CDC's NHANES survey for a user-provided year.
 #' @import magrittr
 #' @importFrom dplyr pull
 #' @importFrom progress progress_bar

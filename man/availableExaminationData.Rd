@@ -2,7 +2,7 @@
 % Please edit documentation in R/availableExaminationData.R
 \name{availableExaminationData}
 \alias{availableExaminationData}
-\title{Fetch a table of the different NHANES physician examination datasets available for a given year.}
+\title{Fetch a table of the different NHANES physician examination datasets available for a given survey cycle.}
 \usage{
 availableExaminationData(start.year = "2017")
 }
@@ -13,7 +13,7 @@ availableExaminationData(start.year = "2017")
 A data.frame containing the names of the available examination datasets for the given year and their abbreviated names.
 }
 \description{
-This function generates a table of the available NHANES physician examination datasets and their abbreviated names e.g., "Blood Pressure" and "BPX_J" for 2017-2018. The desired abbreviated values can then be fed into \code{\link{fetchExaminationData}}, which will return the examination data itself.
+This function generates a table of the available NHANES physician examination datasets and their abbreviated names (e.g. "Blood Pressure" and "BPX_J" for 2017-2018). The desired abbreviated values can then be fed into \code{\link{fetchExaminationData}}, which will return the examination data itself.
 }
 \examples{
 availableExaminationData(start.year = "2013")

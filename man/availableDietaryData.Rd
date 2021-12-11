@@ -2,7 +2,7 @@
 % Please edit documentation in R/availableDietaryData.R
 \name{availableDietaryData}
 \alias{availableDietaryData}
-\title{Fetch a table of the different NHANES dietary datasets available for a given year.}
+\title{Fetch a table of the different NHANES dietary datasets available for a given survey cycle.}
 \usage{
 availableDietaryData(start.year = "2017")
 }
@@ -13,7 +13,7 @@ availableDietaryData(start.year = "2017")
 A data.frame containing the names of the available dietary datasets for the given year and their abbreviated names.
 }
 \description{
-This function generates a table of the available NHANES dietary datasets and their abbreviated names e.g., "Dietary Supplement Database - Ingredient Information" and "DSII" for 2017-2018. The desired abbreviated values can then be fed into \code{\link{fetchDietaryData}}, which will return the dietary data itself.
+This function generates a table of the available NHANES dietary datasets and their abbreviated names (e.g. "Dietary Supplement Database - Ingredient Information" and "DSII" for 2017-2018). The desired abbreviated values can then be fed into \code{\link{fetchDietaryData}}, which will return the dietary data itself.
 }
 \examples{
 availableDietaryData(start.year = "2013")

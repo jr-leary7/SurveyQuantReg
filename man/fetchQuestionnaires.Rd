@@ -2,7 +2,7 @@
 % Please edit documentation in R/fetchQuestionnaires.R
 \name{fetchQuestionnaires}
 \alias{fetchQuestionnaires}
-\title{Fetch NHANES questionnaire data for a given year.}
+\title{Fetch NHANES questionnaire data for a given survey cycle.}
 \usage{
 fetchQuestionnaires(start.year = "2017", survey.list = NULL)
 }
@@ -15,7 +15,7 @@ fetchQuestionnaires(start.year = "2017", survey.list = NULL)
 A named list containing the requested questionnaire data.
 }
 \description{
-This function pulls more granular questionnaire data from the CDC's NHANES survey for a user-provided year.
+This function pulls questionnaire data from the CDC's NHANES survey for a user-provided year.
 }
 \examples{
 fetchQuestionnaires(start.year = "2017")

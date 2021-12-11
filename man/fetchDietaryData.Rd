@@ -2,7 +2,7 @@
 % Please edit documentation in R/fetchDietaryData.R
 \name{fetchDietaryData}
 \alias{fetchDietaryData}
-\title{Fetch NHANES dietary data for a given year.}
+\title{Fetch NHANES dietary data for a given survey cycle.}
 \usage{
 fetchDietaryData(start.year = "2017", diet.dataset.list = NULL)
 }

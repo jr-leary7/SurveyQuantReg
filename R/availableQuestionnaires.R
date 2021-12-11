@@ -1,8 +1,8 @@
-#' Fetch a table of the different NHANES questionnaires available for a given year.
+#' Fetch a table of the different NHANES questionnaires available for a given survey cycle.
 #'
 #' @name availableQuestionnaires
 #' @author Jack Leary
-#' @description This function generates a table of the available NHANES questionnaires and their abbreviated names e.g., "Cardiovascular Health" and "CDQ_J" for 2017-2018. The desired abbreviated values can then be fed into \code{\link{fetchQuestionnaires}}, which will return the questionnaire data itself.
+#' @description This function generates a table of the available NHANES questionnaires and their abbreviated names (e.g. "Cardiovascular Health" and "CDQ_J" for 2017-2018). The desired abbreviated values can then be fed into \code{\link{fetchQuestionnaires}}, which will return the questionnaire data itself.
 #' @import magrittr
 #' @importFrom polite bow nod scrape
 #' @importFrom rvest html_element html_table
@@ -28,7 +28,7 @@ availableQuestionnaires <- function(start.year = "2017") {
   question_table <- cdc_scraped %>%
                     rvest::html_element("tbody") %>%
                     rvest::html_table() %>%
-                    stats::setNames(c("SURVEY_TYPE", "SURVEY_ABRV", "SURVEY_FILE", "SURVEY_DATE")) %>%
+                    stats::setNames(c("SURVEY_TYPE", "SURVEY_ABRV", "SURVEY_FILE", "PUB_DATE")) %>%
                     dplyr::mutate(SURVEY_ABRV = gsub(" Doc", "", SURVEY_ABRV))
   if (nrow(question_table) == 0) {
     stop(sprintf("An error occurred when pulling questionnaire names from %s", cdc_url))

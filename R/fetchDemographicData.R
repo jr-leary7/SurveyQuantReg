@@ -1,4 +1,4 @@
-#' Fetch NHANES demographics data for a given year.
+#' Fetch NHANES demographics data for a given survey cycle.
 #'
 #' @name fetchDemographicData
 #' @author Jack Leary

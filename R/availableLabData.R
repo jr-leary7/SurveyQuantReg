@@ -1,8 +1,8 @@
-#' Fetch a table of the different NHANES laboratory datasets available for a given year.
+#' Fetch a table of the different NHANES laboratory datasets available for a given survey cycle.
 #'
 #' @name availableLabData
 #' @author Jack Leary
-#' @description This function generates a table of the available NHANES laboratory datasets and their abbreviated names e.g., "Cholesterol - Total" and "TCHOL_J" for 2017-2018. The desired abbreviated values can then be fed into \code{\link{fetchLabData}}, which will return the lab data itself.
+#' @description This function generates a table of the available NHANES laboratory datasets and their abbreviated names (e.g. "Cholesterol - Total" and "TCHOL_J" for 2017-2018). The desired abbreviated values can then be fed into \code{\link{fetchLabData}}, which will return the lab data itself.
 #' @import magrittr
 #' @importFrom polite bow nod scrape
 #' @importFrom rvest html_element html_table
@@ -28,7 +28,7 @@ availableLabData <- function(start.year = "2017") {
   lab_table <- cdc_scraped %>%
                rvest::html_element("tbody") %>%
                rvest::html_table() %>%
-               stats::setNames(c("LAB_TYPE", "LAB_ABRV", "LAB_FILE", "LAB_DATE")) %>%
+               stats::setNames(c("LAB_TYPE", "LAB_ABRV", "LAB_FILE", "PUB_DATE")) %>%
                dplyr::mutate(LAB_ABRV = gsub(" Doc", "", LAB_ABRV))
   if (nrow(lab_table) == 0) {
     stop(sprintf("An error occurred when pulling lab dataset names from %s", cdc_url))

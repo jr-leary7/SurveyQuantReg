@@ -1,8 +1,8 @@
-#' Fetch a table of the different NHANES physician examination datasets available for a given year.
+#' Fetch a table of the different NHANES physician examination datasets available for a given survey cycle.
 #'
 #' @name availableExaminationData
 #' @author Jack Leary
-#' @description This function generates a table of the available NHANES physician examination datasets and their abbreviated names e.g., "Blood Pressure" and "BPX_J" for 2017-2018. The desired abbreviated values can then be fed into \code{\link{fetchExaminationData}}, which will return the examination data itself.
+#' @description This function generates a table of the available NHANES physician examination datasets and their abbreviated names (e.g. "Blood Pressure" and "BPX_J" for 2017-2018). The desired abbreviated values can then be fed into \code{\link{fetchExaminationData}}, which will return the examination data itself.
 #' @import magrittr
 #' @importFrom polite bow nod scrape
 #' @importFrom rvest html_element html_table
@@ -28,7 +28,7 @@ availableExaminationData <- function(start.year = "2017") {
   exam_table <- cdc_scraped %>%
                 rvest::html_element("tbody") %>%
                 rvest::html_table() %>%
-                stats::setNames(c("EXAM_TYPE", "EXAM_ABRV", "EXAM_FILE", "EXAM_DATE")) %>%
+                stats::setNames(c("EXAM_TYPE", "EXAM_ABRV", "EXAM_FILE", "PUB_DATE")) %>%
                 dplyr::mutate(EXAM_ABRV = gsub(" Doc", "", EXAM_ABRV))
   if (nrow(exam_table) == 0) {
     stop(sprintf("An error occurred when pulling examination dataset names from %s", cdc_url))

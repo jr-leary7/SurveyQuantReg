@@ -2,7 +2,7 @@
 % Please edit documentation in R/fetchDemographicData.R
 \name{fetchDemographicData}
 \alias{fetchDemographicData}
-\title{Fetch NHANES demographics data for a given year.}
+\title{Fetch NHANES demographics data for a given survey cycle.}
 \usage{
 fetchDemographicData(start.year = "2017")
 }

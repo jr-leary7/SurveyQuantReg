@@ -1,4 +1,4 @@
-#' Fetch NHANES physician exam data for a given year.
+#' Fetch NHANES physician exam data for a given survey cycle.
 #'
 #' @name fetchExaminationData
 #' @author Jack Leary

@@ -1,8 +1,8 @@
-#' Fetch a table of the different NHANES dietary datasets available for a given year.
+#' Fetch a table of the different NHANES dietary datasets available for a given survey cycle.
 #'
 #' @name availableDietaryData
 #' @author Jack Leary
-#' @description This function generates a table of the available NHANES dietary datasets and their abbreviated names e.g., "Dietary Supplement Database - Ingredient Information" and "DSII" for 2017-2018. The desired abbreviated values can then be fed into \code{\link{fetchDietaryData}}, which will return the dietary data itself.
+#' @description This function generates a table of the available NHANES dietary datasets and their abbreviated names (e.g. "Dietary Supplement Database - Ingredient Information" and "DSII" for 2017-2018). The desired abbreviated values can then be fed into \code{\link{fetchDietaryData}}, which will return the dietary data itself.
 #' @import magrittr
 #' @importFrom polite bow nod scrape
 #' @importFrom rvest html_element html_table
@@ -28,7 +28,7 @@ availableDietaryData <- function(start.year = "2017") {
   diet_table <- cdc_scraped %>%
                 rvest::html_element("tbody") %>%
                 rvest::html_table() %>%
-                stats::setNames(c("DIET_TYPE", "DIET_ABRV", "DIET_FILE", "DIET_DATE")) %>%
+                stats::setNames(c("DIET_TYPE", "DIET_ABRV", "DIET_FILE", "PUB_DATE")) %>%
                 dplyr::mutate(DIET_ABRV = gsub(" Doc", "", DIET_ABRV))
   if (nrow(diet_table) == 0) {
     stop(sprintf("An error occurred when pulling dietary dataset names from %s", cdc_url))

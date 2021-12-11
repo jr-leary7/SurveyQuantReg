@@ -2,7 +2,7 @@
 % Please edit documentation in R/fetchExaminationData.R
 \name{fetchExaminationData}
 \alias{fetchExaminationData}
-\title{Fetch NHANES physician exam data for a given year.}
+\title{Fetch NHANES physician exam data for a given survey cycle.}
 \usage{
 fetchExaminationData(start.year = "2017", exam.dataset.list = NULL)
 }

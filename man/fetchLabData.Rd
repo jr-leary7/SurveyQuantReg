@@ -2,7 +2,7 @@
 % Please edit documentation in R/fetchLabData.R
 \name{fetchLabData}
 \alias{fetchLabData}
-\title{Fetch NHANES lab data for a given year.}
+\title{Fetch NHANES lab data for a given survey cycle.}
 \usage{
 fetchLabData(start.year = "2017", lab.dataset.list = NULL)
 }

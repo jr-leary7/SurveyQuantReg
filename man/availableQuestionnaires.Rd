@@ -2,7 +2,7 @@
 % Please edit documentation in R/availableQuestionnaires.R
 \name{availableQuestionnaires}
 \alias{availableQuestionnaires}
-\title{Fetch a table of the different NHANES questionnaires available for a given year.}
+\title{Fetch a table of the different NHANES questionnaires available for a given survey cycle.}
 \usage{
 availableQuestionnaires(start.year = "2017")
 }
@@ -13,7 +13,7 @@ availableQuestionnaires(start.year = "2017")
 A data.frame containing the full and abbreviated names of the available questionnaires for the given year.
 }
 \description{
-This function generates a table of the available NHANES questionnaires and their abbreviated names e.g., "Cardiovascular Health" and "CDQ_J" for 2017-2018. The desired abbreviated values can then be fed into \code{\link{fetchQuestionnaires}}, which will return the questionnaire data itself.
+This function generates a table of the available NHANES questionnaires and their abbreviated names (e.g. "Cardiovascular Health" and "CDQ_J" for 2017-2018). The desired abbreviated values can then be fed into \code{\link{fetchQuestionnaires}}, which will return the questionnaire data itself.
 }
 \examples{
 availableQuestionnaires(start.year = "2011")

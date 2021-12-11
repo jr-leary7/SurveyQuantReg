@@ -1,4 +1,4 @@
-#' Fetch NHANES lab data for a given year.
+#' Fetch NHANES lab data for a given survey cycle.
 #'
 #' @name fetchLabData
 #' @author Jack Leary

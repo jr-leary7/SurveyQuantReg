@@ -2,7 +2,7 @@
 % Please edit documentation in R/availableLabData.R
 \name{availableLabData}
 \alias{availableLabData}
-\title{Fetch a table of the different NHANES laboratory datasets available for a given year.}
+\title{Fetch a table of the different NHANES laboratory datasets available for a given survey cycle.}
 \usage{
 availableLabData(start.year = "2017")
 }
@@ -13,7 +13,7 @@ availableLabData(start.year = "2017")
 A data.frame containing the names of the available lab datasets for the given year and their abbreviated names.
 }
 \description{
-This function generates a table of the available NHANES laboratory datasets and their abbreviated names e.g., "Cholesterol - Total" and "TCHOL_J" for 2017-2018. The desired abbreviated values can then be fed into \code{\link{fetchLabData}}, which will return the lab data itself.
+This function generates a table of the available NHANES laboratory datasets and their abbreviated names (e.g. "Cholesterol - Total" and "TCHOL_J" for 2017-2018). The desired abbreviated values can then be fed into \code{\link{fetchLabData}}, which will return the lab data itself.
 }
 \examples{
 availableLabData(start.year = "2013")
