@@ -25,8 +25,9 @@ summariseQuantReg <- function(quant.reg.fit = NULL, boot.weights = NULL, alpha =
   # extract coefficients, test statistics, and p-values
   var_covar_mat <- attr(quant.reg.fit, "var")
   se <- ifelse(length(var_covar_mat) == 1,
-               sqrt(var_covar_mat),
-               sqrt(diag(var_covar_mat)))
+               list(sqrt(var_covar_mat)),
+               list(sqrt(diag(var_covar_mat))))
+  se <- unlist(se)
   res_table <- data.frame(VARIABLE = names(quant.reg.fit),
                           COEF = unname(as.matrix(quant.reg.fit))[, 1],
                           SE = unname(se)) %>%
