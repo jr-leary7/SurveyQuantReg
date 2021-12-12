@@ -17,7 +17,7 @@
 summariseQuantReg <- function(quant.reg.fit = NULL, boot.weights = NULL, alpha = 0.05) {
   # check inputs
   if (is.null(quant.reg.fit) | is.null(boot.weights)) { stop("Arguments to summariseQuantReg() must be non-null.") }
-  Z <- abs(stats::qnorm(0.05 / 2))
+  Z <- abs(stats::qnorm(alpha / 2))
   # compute degrees freedom
   n_covariates <- length(stats::coef(quant.reg.fit)) - 1
   weighted_n <- round(sum(boot.weights$pweights))
