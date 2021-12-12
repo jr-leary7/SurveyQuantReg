@@ -10,7 +10,6 @@ bootSurveyDesign(
   strata.var = NULL,
   weight.var = NULL,
   nested.clusters = TRUE,
-  boot.type = "bootstrap",
   n.boot = 1000
 )
 }
@@ -23,9 +22,7 @@ bootSurveyDesign(
 
 \item{weight.var}{A string containing the name of the variable containing sampling weights. Defaults to NULL.}
 
-\item{nested.clusters}{Are the clusters nested within strata? Defaults to TRUE}
-
-\item{boot.type}{A string specifying the resampling method. Passed to the \code{type} argument of \code{\link[survey]{as.svrepdesign}}. Defaults to "bootstrap".}
+\item{nested.clusters}{Are the clusters nested within strata? Defaults to TRUE.}
 
 \item{n.boot}{The number of replications to perform. Defaults to 1000.}
 }

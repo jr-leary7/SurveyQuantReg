@@ -8,8 +8,7 @@
 #' @param id.var A string containing the name of the variable that denotes clusters of primary sampling units. Defaults to NULL.
 #' @param strata.var A string containing the name of the variable that stratifies the PSUs. Defaults to NULL.
 #' @param weight.var A string containing the name of the variable containing sampling weights. Defaults to NULL.
-#' @param nested.clusters Are the clusters nested within strata? Defaults to TRUE
-#' @param boot.type A string specifying the resampling method. Passed to the \code{type} argument of \code{\link[survey]{as.svrepdesign}}. Defaults to "bootstrap".
+#' @param nested.clusters Are the clusters nested within strata? Defaults to TRUE.
 #' @param n.boot The number of replications to perform. Defaults to 1000.
 #' @return An object of class \code{svyrep.design} containing replicate weights.
 #' @seealso \code{\link[survey]{svydesign}} \code{\link[survey]{as.svrepdesign}}
@@ -22,10 +21,9 @@ bootSurveyDesign <- function(survey.dat = NULL,
                              strata.var = NULL,
                              weight.var = NULL,
                              nested.clusters = TRUE,
-                             boot.type = "bootstrap",
                              n.boot = 1000) {
   # check inputs
-  if (any(unlist(lapply(list(survey.dat, id.var, strata.var, weight.var, nested.clusters, survey.dat), is.null)))) {
+  if (any(unlist(lapply(list(survey.dat, id.var, strata.var, weight.var), is.null)))) {
     stop("Arguments to bootSurveyDesign() must be non-null.")
   }
   # survey design
