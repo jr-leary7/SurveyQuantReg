@@ -29,9 +29,9 @@ bootSurveyDesign <- function(survey.dat = NULL,
     stop("Arguments to bootSurveyDesign() must be non-null.")
   }
   # survey design
-  survey_design <- survey::svydesign(id = ~as.symbol(id.var),
-                                     strata = ~as.symbol(strata.var),
-                                     weights = ~as.symbol(weight.var),
+  survey_design <- survey::svydesign(id = ~eval(as.symbol(id.var)),
+                                     strata = ~eval(as.symbol(strata.var)),
+                                     weights = ~eval(as.symbol(weight.var)),
                                      nest = nested.clusters,
                                      data = survey.dat)
   # bootstrap sample weights
