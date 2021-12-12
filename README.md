@@ -7,5 +7,5 @@ This repo contains an R package built to analyze NHANES survey data using quanti
 This package can be installed using the following snippet:
 
 ```
-remotes::instalL_github("jr-leary7/SurveyQuantReg")
+remotes::install_github("jr-leary7/SurveyQuantReg")
 ```
